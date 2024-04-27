@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MAD</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_products">Products</string>
+    <string name="title_activity_count_water">CountWaterActivity</string>
+    <string name="title_activity_4444">Activity4444</string>
+    <string name="title_activity_login_page">LoginPage</string>
+    <string name="title_activity_login_page1">LoginPage1</string>
+    <string name="title_activity_main3">MainActivity3</string>
+    <string name="title_activity_food_categories">FoodCategories</string>
+    <string name="title_activity_button_trial">ButtonTrial</string>
+    <string name="title_activity_app_category">AppCategory</string>
+    <string name="title_activity_recipe_screen">RecipeScreen</string>
+    <string name="title_activity_delish_homepage">DelishHomepage</string>
+</resources>
