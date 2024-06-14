@@ -1,10 +1,10 @@
 package com.example.mad.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -29,6 +29,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mad.R
+//import com.example.mad.ui.ui.LinkingPage
 import com.example.mad.ui.ui.theme.MADTheme
 
  class RecipeScreen : ComponentActivity() {
@@ -42,15 +43,19 @@ import com.example.mad.ui.ui.theme.MADTheme
                         color = MaterialTheme.colorScheme.background
                     ) {
                         //Greeting2("Android")
-                        CategoryScreen()
+                        CategoryScreen(onGetStartedClicked = {
+                            val supriya = Intent(this, RecipeScreen::class.java)
+                            startActivity(supriya)
+                        })
+                        }
                     }
                 }
             }
         }
-    }
-    @Preview
+
+
     @Composable
-    fun CategoryScreen() {
+    fun CategoryScreen(onGetStartedClicked:()->Unit = {}, onCategoryItemClicked: () -> Unit) {
         val categories = listOf(
             CategoryItemData("Vegetarian", R.drawable.veg),
             CategoryItemData("Non-Vegetarian", R.drawable.non_veg),
@@ -67,7 +72,7 @@ import com.example.mad.ui.ui.theme.MADTheme
             ) {
                 LazyVerticalGrid(columns = GridCells.Fixed(2)) {
                     items(categories) { category ->
-                        CategoryItem(category = category)
+                        CategoryItem(category = category, onCategoryItemClicked)
                     }
                 }
             }
@@ -79,13 +84,15 @@ import com.example.mad.ui.ui.theme.MADTheme
     data class CategoryItemData(val categoryName: String, val imageResId: Int)
 
     @Composable
-    fun CategoryItem(category: CategoryItemData) {
+    fun CategoryItem(category: CategoryItemData, onCategoryItemClicked:() -> Unit) {
         Card(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(12.dp)
-               //.background(Color.Black)
-                .clickable { /* Handle click event for category */ },
+                //.background(Color.Black)
+                .clickable {
+                           onCategoryItemClicked()
+                },
 
             //elevation = 4.dp
         ) {

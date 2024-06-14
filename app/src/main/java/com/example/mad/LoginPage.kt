@@ -41,6 +41,7 @@ class LoginPage : ComponentActivity() {
                 ) {
                     LoginScreen(onGetStartedClicked = {
                         val supriya = Intent(this, RecipeScreen::class.java)
+
                         startActivity(supriya)
                     })
             }

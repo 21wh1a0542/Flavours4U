@@ -12,4 +12,6 @@
     <string name="title_activity_app_category">AppCategory</string>
     <string name="title_activity_recipe_screen">RecipeScreen</string>
     <string name="title_activity_delish_homepage">DelishHomepage</string>
+    <string name="title_activity_linking_page">LinkingPage</string>
+    <string name="title_activity_recipes_main">RecipesMain</string>
 </resources>
